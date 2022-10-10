@@ -1,10 +1,19 @@
+import { useState } from "react";
 import TodoList from "./TodoList"
 function App() {
-  return <div>
-    <TodoList />
+  const [todos, setTodos] = useState(["Todo1", "Todo2"]);
+  
+  return (
+  <>
+   
+    <TodoList todos = {todos}/>
     <input type="text"/>
     <button>タスク追加</button>
-  </div>;
+    <button>完了したタスクの削除</button>
+    <div>残りのタスク:0</div>
+
+  </>
+);
 }
 
 export default App;
